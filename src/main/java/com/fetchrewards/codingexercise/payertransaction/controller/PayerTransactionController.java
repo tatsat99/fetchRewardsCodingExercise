@@ -35,7 +35,7 @@ public class PayerTransactionController {
 	public ResponseEntity<?> addPayer(@RequestBody PayerTransaction payerTransaction) {
 		try {
 			payerTransactionService.addPayerList(payerTransaction);
-			return new ResponseEntity<>(null, HttpStatus.ACCEPTED);
+			return new ResponseEntity<>("Payer transaction added", HttpStatus.ACCEPTED);
 		} catch (IllegalArgumentException e) {
 			return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
 		} catch (Exception e) {
